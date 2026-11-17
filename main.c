@@ -3,6 +3,11 @@
 #include <math.h>
 #define EPS 1e-9
 
+void swap(int *a, int *b){
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
 void task27(){
     int len;
     printf("task 27| enter len arr\n");
@@ -152,8 +157,94 @@ void task90(){
     printf("numbers equality\n");
     free(arr);
 }
-void task151();
-void task32();
+void task151(){
+    int size = 0;
+    printf("task 151| enter size\n");
+    scanf("%d", &size);
+    if (size <= 0)
+    {
+        /* code */
+        printf("uncorrect size\n");
+        return;
+    }
+    int *arr = (int*)malloc(size * sizeof(int));
+    for (int i = 0; i < size; i++)
+    {
+        /* code */
+        printf("enter number");
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 0; i < size / 2; i++)
+    {
+        /* code */
+        swap(&arr[i], &arr[size - 1 - i]);
+    }
+    printf("swap massive:\n");
+    for (int i = 0; i < size; i++)
+    {
+        /* code */
+        printf("%d  ", arr[i]);
+    }
+    printf("\n");
+    free(arr);
+}
+void task32(){
+    int size = 0;
+    printf("task 32| enter size\n");
+    scanf("%d", &size);
+    if (size <= 0)
+    {
+        /* code */
+        printf("uncorrect size\n");
+        return;
+    }
+    double *arr = (double*)malloc(size * sizeof(double));
+    double z = 0;
+    int number_replacement = 0;
+    printf("enter Z\n");
+    scanf("%lf", &z);
+    for (int i = 0; i < size; i++)
+    {
+        /* code */
+        printf("enter numbers\n");
+        scanf("%lf", &arr[i]);
+        if (arr[i] > z){
+            arr[i] = z;
+            number_replacement++;
+        }
+
+    }
+    printf("modified array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%.2lf ", arr[i]);
+    }   
+    printf("\nnumber of replacement = %d\n", number_replacement);
+    free(arr);
+}
 int main(){
+    int choise = 0;
+    printf("====menu====\n");
+    printf("1 - task 27\n");
+    printf("2 - task 34\n");
+    printf("3 - tasl 53\n");
+    printf("4 - task 90\n");
+    printf("5 - task 151\n");
+    printf("6 - task 32\n");
+    printf("0 - exit\n");
+    scanf("%d", &choise);
+    do
+    {
+        switch(choise){
+            case 1: task27(); break;
+            case 2: task34(); break;
+            case 3: task53(); break;
+            case 4: task90(); break;
+            case 5: task151(); break;
+            case 6: task32(); break;
+            case 0: printf("exiting"); break;
+            default: printf("unknown task\n");
+        }
+    }while(choise != 0);
+
     return 0;
 }
