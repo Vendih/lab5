@@ -223,17 +223,18 @@ void task32(){
 }
 int main(){
     int choise = 0;
-    printf("====menu====\n");
-    printf("1 - task 27\n");
-    printf("2 - task 34\n");
-    printf("3 - tasl 53\n");
-    printf("4 - task 90\n");
-    printf("5 - task 151\n");
-    printf("6 - task 32\n");
-    printf("0 - exit\n");
-    scanf("%d", &choise);
+    
     do
     {
+        printf("====menu====\n");
+        printf("1 - task 27\n");
+        printf("2 - task 34\n");
+        printf("3 - tasl 53\n");
+        printf("4 - task 90\n");
+        printf("5 - task 151\n");
+        printf("6 - task 32\n");
+        printf("0 - exit\n");
+        scanf("%d", &choise);
         switch(choise){
             case 1: task27(); break;
             case 2: task34(); break;
@@ -241,8 +242,8 @@ int main(){
             case 4: task90(); break;
             case 5: task151(); break;
             case 6: task32(); break;
-            case 0: printf("exiting"); break;
-            default: printf("unknown task\n");
+            case 0: printf("exiting..."); break;
+            default: printf("unknown task\n"); break;
         }
     }while(choise != 0);
 
